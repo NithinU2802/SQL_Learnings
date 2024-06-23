@@ -216,3 +216,12 @@ customer who order with the discount need to be stored.
     Denormalization is the process of intentionally duplicating information in
 a table, in violation of normalization rules. which done after normalization
 not mean to skip. Based on business requirements need to be done.
+
+# Aggregate Function
+    which use more than one piece of data to generate some mathematic value to find some sort
+of detail form the table. Aggregate functions are count, sum, average(Avg), Min and Max.
+
+# Joining Table
+    Consider the restaurant example as customer table consist of Names and dishId from 
+the dishId we need to get dishName. For this case joins play good role on it.
+    Eg: SELECT Name,DishId,Dishes.name FROM customers JOIN Dishes ON Customers.dishId=Dishes.DishId;
