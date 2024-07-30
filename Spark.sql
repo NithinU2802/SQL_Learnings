@@ -6,5 +6,10 @@ CREATE TABLE Member (
     Address varchar(255),
     City varchar(255)
 );
-INSERT into Member(id, FirstName, LastName, Address, City)
+
+INSERT INTO Member(id, FirstName, LastName, Address, City)
 VALUES (2, 'Nithin', 'U', 'Airport', 'Trichy');
+
+UPDATE Customers
+SET Address = 'KK Nagar', City= 'Trichy'
+WHERE id = 2;
