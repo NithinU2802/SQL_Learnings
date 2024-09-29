@@ -37,6 +37,7 @@ make an unique idenification number for an table.
 # One to Many Relationship 
 
    Table 1:
+   
     ----------------
     | id   | dish  |
     --------------- 
@@ -46,6 +47,7 @@ make an unique idenification number for an table.
     ----------------
 
    Table 2:
+   
     ---------------------------
     |  Name   |  Ordered dish |
     ---------------------------
@@ -60,6 +62,7 @@ access multiple times with occurance work as forign key.
 # Many to Many Relationship (Link Table)
 
    Table 1:
+   
     -----------------
     | id   | chief  |
     -----------------
@@ -69,6 +72,7 @@ access multiple times with occurance work as forign key.
     -----------------
 
    Table 2:
+   
     ----------------
     | id   | dish  |
     --------------- 
@@ -78,6 +82,7 @@ access multiple times with occurance work as forign key.
     ----------------
 
    Table 3:
+   
     ---------------------------
     |  Name   |  Ordered dish |
     ---------------------------
@@ -94,6 +99,7 @@ combination of name of table 1 and table 2.
 # One to One Relationship (Direct Mapping for Security)
 
    Table 1:
+   
     ----------------
     | id   | dish  |
     --------------- 
@@ -103,6 +109,7 @@ combination of name of table 1 and table 2.
     ----------------
 
    Table 2:
+   
     ---------------------------
     |  Name   |   dish        |
     ---------------------------
@@ -164,50 +171,56 @@ repeating groups.
 can be part of a key that can be used to uniquely identify a row. 
 Eg:
 Consider a table which is
-Customer:
+  Customer:
  ------------------------------------
- |  id  |  Name   |  time |  address|
- ------------------------------------
- |   1  | Ram     | 12:00 | Trichy  |
- |   2  | Sam     | 05:00 | Chennai |
- |   3  | Ram     | 02:00 | Trichy  |
- |   4  | Rahu    | 07:45 | Madurai |
- ------------------------------------
+     |  id  |  Name   |  time |  address|
+     ------------------------------------
+     |   1  | Ram     | 12:00 | Trichy  |
+     |   2  | Sam     | 05:00 | Chennai |
+     |   3  | Ram     | 02:00 | Trichy  |
+     |   4  | Rahu    | 07:45 | Madurai |
+     ------------------------------------
+   
     From this table we can identify that id is a primary key and name+time could be act
 as composite key but the thing is address is partially dependent on composite key by only
 name. So we we split the table as below:
+
 Customer:
- --------------------------
- |  id  |  Name   |  time |
- --------------------------
- |   1  | Ram     | 12:00 |
- |   2  | Sam     | 05:00 |
- |   3  | Ram     | 02:00 |
- |   4  | Rahu    | 07:45 | 
- --------------------------
+
+     --------------------------
+     |  id  |  Name   |  time |
+     --------------------------
+     |   1  | Ram     | 12:00 |
+     |   2  | Sam     | 05:00 |
+     |   3  | Ram     | 02:00 |
+     |   4  | Rahu    | 07:45 | 
+     --------------------------
+     
  Location:
- -------------------
- |  Name | address |
- -------------------
- |Ram    | Trichy  |
- |Sam    | Chennai |
- |Ram    | Trichy  |
- |Rahu   | Madurai |
- -------------------
+ 
+     -------------------
+     |  Name | address |
+     -------------------
+     |Ram    | Trichy  |
+     |Sam    | Chennai |
+     |Ram    | Trichy  |
+     |Rahu   | Madurai |
+     -------------------
 
  3. 3NF - Third Normal Form
      which can be represent as values should not be stored if they can
 be calculated from another non-key field.
 
 Eg:
- ------------------------------------------
- |  id  |  item   |  cost |  Acutal price |
- ------------------------------------------
- |   1  | Burger  | 200   |    180        |
- |   2  | Poori   | 30    |    10         |
- |   3  | Dosai   | 50    |    40         |
- |   4  | Sambar  | 50    |    40         |
- ------------------------------------------
+
+    ------------------------------------------
+    |  id  |  item   |  cost |  Acutal price |
+    ------------------------------------------
+    |   1  | Burger  | 200   |    180        |
+    |   2  | Poori   | 30    |    10         |
+    |   3  | Dosai   | 50    |    40         |
+    |   4  | Sambar  | 50    |    40         |
+    ------------------------------------------
     In the above table we can see that actual price is dependent on cost which is non-key value
 of the database with -10 rupees discount. To overcome this need to make seperate table for the
 customer who order with the discount need to be stored.
